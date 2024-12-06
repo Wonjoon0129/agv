@@ -3,6 +3,6 @@
 
 <mapper namespace="org.example.mapper.TrsMapper">
     <select id="findAll" resultType="org.example.entity.Trs">
-        select * from trs_2
+        select * from trs
     </select>
 </mapper>
