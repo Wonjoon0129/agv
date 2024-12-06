@@ -28,7 +28,9 @@ class Initializer {
                     agv.setSchedule(new ArrayList<Trs>());
                     agv.getSchedule().add(task);
                     System.out.println("Task " + task.getId() + " assigned to AGV " + agv.getAgvidf());
+                    break;
                 }
+
             }
         }
 
