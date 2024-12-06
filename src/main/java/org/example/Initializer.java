@@ -13,6 +13,10 @@ class Initializer {
 
     public Initializer(List<Agv> agvs, List<Trs> tasks) {
         this.agvs = agvs;
+        for(Agv agv:agvs)
+        {
+            agv.setSchedule(new ArrayList<Trs>());
+        }
         this.tasks = tasks;
     }
 
@@ -25,13 +29,16 @@ class Initializer {
             for (Agv agv : agvs) {
                 if(checkCapabilityMatch(agv.getCapability(),task.getCapability()))
                 {
-                    agv.setSchedule(new ArrayList<Trs>());
                     agv.getSchedule().add(task);
                     System.out.println("Task " + task.getId() + " assigned to AGV " + agv.getAgvidf());
                     break;
                 }
 
             }
+        }
+        for (Agv agv : agvs){
+            List<Trs> trs = agv.getSchedule();
+            System.out.println(trs);
         }
 
     }
